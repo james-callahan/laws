@@ -61,24 +61,24 @@ Currently does not support Authentication parameters in the query string.
 
 The fields of `tbl` are:
 
-Field                   | Type                        | Description
-------------------------|-----------------------------|-----------------------
-`.Domain`               | `string|nil`                | The domain to hit, defaults to `"amazonaws.com"`
-`.Region`               | `string`                    | The Amazon region. e.g. `"us-east-1"`
-`.Service`              | `string`                    | The Amazon service. e.g. `"kinesis"`
-`.method`               | `string`                    | e.g. `"GET"`
-`.CanonicalURI`         | `string|nil`                | A pre-canonicalised path. If not provided `.path` will be canonicalised
-`.path`                 | `string|nil`                | The path of your request. Not used if `.CanonicalURI` is specified. If not provided or empty, defaults to `"/"`
-`.CanonicalQueryString` | `string|nil`                | A pre-canonicalised query-string. If not provided `.query` will be canonicalised
-`.query`                | `string|nil`                | The query string for your request. Not used if `.CanonicalQueryString` is specified. Not required.
-`.headers`              | `{string:string|false}|nil` | Table of string key/value pairs to use as signed headers in the request. A value of `false` prevents the header from being automatically filled in. Keys will be normalised to Title-Case; behaviour on duplicates is undefined.
-`.body`                 | `string|nil`                | Request body
-`.AccessKey`            | `string`                    | Your Amazon access key.
-`.SigningKey`           | `string|nil`                | A pre-derived signing key, if one is not provided, it will be derived from `.SecretKey`
-`.SecretKey`            | `string|nil`                | Your Amazon secret key, only required if you do not specify `.SigningKey`
-`.timestamp`            | `number|nil`                | When request should be signed for as a unix timestamp. defaults to `os.time()` i.e. now
-`.tls`                  | `boolean|nil`               | A truthy value will use HTTPS, false indicates HTTP. defaults to `true`
-`.port`                 | `number|nil`                | TCP port for request. defaults to `443` for HTTPS or `80` for HTTP
+Field                   | Type                          | Description
+------------------------|-------------------------------|-----------------------
+`.Domain`               | `string\|nil`                 | The domain to hit, defaults to `"amazonaws.com"`
+`.Region`               | `string`                      | The Amazon region. e.g. `"us-east-1"`
+`.Service`              | `string`                      | The Amazon service. e.g. `"kinesis"`
+`.method`               | `string`                      | e.g. `"GET"`
+`.CanonicalURI`         | `string\|nil`                 | A pre-canonicalised path. If not provided `.path` will be canonicalised
+`.path`                 | `string\|nil`                 | The path of your request. Not used if `.CanonicalURI` is specified. If not provided or empty, defaults to `"/"`
+`.CanonicalQueryString` | `string\|nil`                 | A pre-canonicalised query-string. If not provided `.query` will be canonicalised
+`.query`                | `string\|nil`                 | The query string for your request. Not used if `.CanonicalQueryString` is specified. Not required.
+`.headers`              | `{string:string\|false}\|nil` | Table of string key/value pairs to use as signed headers in the request. A value of `false` prevents the header from being automatically filled in. Keys will be normalised to Title-Case; behaviour on duplicates is undefined.
+`.body`                 | `string\|nil`                 | Request body
+`.AccessKey`            | `string`                      | Your Amazon access key.
+`.SigningKey`           | `string\|nil`                 | A pre-derived signing key, if one is not provided, it will be derived from `.SecretKey`
+`.SecretKey`            | `string\|nil`                 | Your Amazon secret key, only required if you do not specify `.SigningKey`
+`.timestamp`            | `number\|nil`                 | When request should be signed for as a unix timestamp. defaults to `os.time()` i.e. now
+`.tls`                  | `boolean\|nil`                | A truthy value will use HTTPS, false indicates HTTP. defaults to `true`
+`.port`                 | `number\|nil`                 | TCP port for request. defaults to `443` for HTTPS or `80` for HTTP
 
 The returned `request` object has fields:
 
@@ -91,7 +91,7 @@ Field       | Type              | Description
 `.method`   | `string`          | e.g. `"GET"`
 `.target`   | `string`          | The target (the part between method and `HTTP/`) ready to be used in a HTTP request. i.e. path and query string
 `.headers`  | `{string:string}` | Table of headers
-`.body`     | `string|nil`      | `.body` as passed in
+`.body`     | `string\|nil`      | `.body` as passed in
 
 The returned `extra` object has intermediary values calculated by the AWS v4 signing algorithm.
 
