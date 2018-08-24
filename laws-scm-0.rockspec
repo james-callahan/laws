@@ -1,8 +1,9 @@
 package = "laws"
 version = "scm-0"
 
-description= {
+description = {
 	summary = "AWS Library for Lua";
+	homepage = "https://github.com/james-callahan/laws";
 	license = "MIT";
 }
 
