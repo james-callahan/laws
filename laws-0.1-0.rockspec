@@ -1,5 +1,5 @@
 package = "laws"
-version = "scm-0"
+version = "0.1-0"
 
 description = {
 	summary = "AWS Library for Lua";
@@ -13,7 +13,8 @@ dependencies = {
 }
 
 source = {
-	url = "git+https://github.com/james-callahan/laws.git";
+	url = "https://github.com/james-callahan/laws/archive/v0.1.zip";
+	dir = "laws-0.1";
 }
 
 build = {
