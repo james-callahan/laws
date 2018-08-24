@@ -12,7 +12,7 @@ dependencies = {
 }
 
 source = {
-	url = "git://github.com/chatid/laws.git";
+	url = "git+https://github.com/james-callahan/laws.git";
 }
 
 build = {
