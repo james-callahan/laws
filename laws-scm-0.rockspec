@@ -3,7 +3,7 @@ version = "scm-0"
 
 description= {
 	summary = "AWS Library for Lua";
-	license = "MIT/X11";
+	license = "MIT";
 }
 
 dependencies = {
