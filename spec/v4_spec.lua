@@ -19,7 +19,7 @@ describe("Pass AWSv4 test suite", function()
 	end
 
 	local dir = "./spec/aws4_testsuite/"
-	for i, test_name in ipairs {
+	for _, test_name in ipairs {
 		"get-header-key-duplicate";
 		"get-header-value-order";
 		"get-header-value-trim";
@@ -93,6 +93,7 @@ describe("Pass AWSv4 test suite", function()
 				body = body;
 				timestamp = 1315611360; -- Timestamp used by all tests
 			}
+			assert.truthy(http_req)
 			assert.same(creq:gsub("\r\n", "\n"), interim.CanonicalRequest)
 			assert.same(sts:gsub("\r\n", "\n"), interim.StringToSign)
 			assert.same(authz, interim.Authorization)

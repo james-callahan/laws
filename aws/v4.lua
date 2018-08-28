@@ -45,7 +45,7 @@ end
 local function canonicalise_path(path)
 	local segments = {}
 	for segment in path:gmatch("/([^/]*)") do
-		if segment == "" or segment == "." then
+		if segment == "" or segment == "." then -- luacheck: ignore 542
 			-- nothing
 		elseif segment == ".." then
 			-- intentionally discards components at top level
